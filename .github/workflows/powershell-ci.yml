@@ -1,0 +1,32 @@
+name: PowerShell CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up PowerShell
+      uses: actions/setup-powershell@v2
+
+    - name: Validate PowerShell syntax
+      shell: pwsh
+      run: |
+        Write-Host "Validating SOC-Correlation.ps1..."
+        $script = Get-Content .\scripts\SOC-Correlation.ps1 -Raw
+        $null = [scriptblock]::Create($script)
+        Write-Host "Syntax validation passed."
+
+    - name: Run demo script
+      shell: pwsh
+      run: |
+        Write-Host "Executing run-demo.ps1..."
+        ./run-demo.ps1
