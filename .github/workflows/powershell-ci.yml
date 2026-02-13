@@ -22,19 +22,32 @@ jobs:
       - name: Validate PowerShell syntax (parse)
         shell: pwsh
         run: |
+          $ErrorActionPreference = "Stop"
+
           Write-Host "Validating scripts/SOC-Correlation.ps1..."
           $path = Join-Path $env:GITHUB_WORKSPACE "scripts/SOC-Correlation.ps1"
+
           $errors = $null
           $tokens = $null
           [void][System.Management.Automation.Language.Parser]::ParseFile($path, [ref]$tokens, [ref]$errors)
+
           if ($errors -and $errors.Count -gt 0) {
             $errors | ForEach-Object { Write-Error $_.Message }
             throw "PowerShell parse errors found."
           }
+
           Write-Host "Syntax validation passed."
 
-      - name: Run demo script
+      - name: Run demo script (capture exit code, do not fail CI)
         shell: pwsh
         run: |
+          $ErrorActionPreference = "Stop"
+
           Write-Host "Executing run-demo.ps1..."
           ./run-demo.ps1
+
+          $code = $LASTEXITCODE
+          Write-Host "Demo exit code (severity): $code"
+
+          # CI is validating execution + output. Severity is expected in demo samples.
+          exit 0
