@@ -1,7 +1,7 @@
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1-blue)
 ![Automation](https://img.shields.io/badge/Automation-NOC%20POC-green)
 ![Status](https://img.shields.io/badge/Status-Demo%20Ready-success)
-![PowerShell CI](https://github.com/MrHoban/NOC-Automation-Lab/actions/workflows/powershell-ci.yml/badge.svg)
+[![PowerShell CI](https://github.com/MrHoban/NOC-Automation-Lab/actions/workflows/powershell-ci.yml/badge.svg)](https://github.com/MrHoban/NOC-Automation-Lab/actions/workflows/powershell-ci.yml)
 
 
 # NOC Automation Lab — SOC/NOC Correlation Engine (POC)
