@@ -1,0 +1,26 @@
+[
+  {
+    "DeviceName": "LAB-WS-01",
+    "Client": "Internal Lab",
+    "IsOnline": false,
+    "IsQuarantined": true,
+    "DiskFreeGB": 3,
+    "CPUPercent": 40
+  },
+  {
+    "DeviceName": "LAB-SRV-01",
+    "Client": "Internal Lab",
+    "IsOnline": true,
+    "IsQuarantined": false,
+    "DiskFreeGB": 2,
+    "CPUPercent": 18
+  },
+  {
+    "DeviceName": "LAB-WS-02",
+    "Client": "Internal Lab",
+    "IsOnline": false,
+    "IsQuarantined": false,
+    "DiskFreeGB": 25,
+    "CPUPercent": 9
+  }
+]

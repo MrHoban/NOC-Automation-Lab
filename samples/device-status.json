@@ -1,0 +1,8 @@
+{
+    "DeviceName": "LAB-WS-01",
+    "Client": "Internal Lab",
+    "IsOnline": false,
+    "IsQuarantined": true,
+    "DiskFreeGB": 3,
+    "CPUPercent": 40 
+}

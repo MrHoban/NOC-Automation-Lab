@@ -1,0 +1,131 @@
+﻿[
+    {
+        "DeviceName":  "LAB-WS-01",
+        "Client":  "Internal Lab",
+        "Site":  "HQ",
+        "DeviceType":  "Workstation",
+        "LastSeenUtc":  "2026-02-11T23:10:00Z",
+        "OsVersion":  "Windows 11 23H2",
+        "IPAddress":  "10.10.10.51",
+        "LoggedOnUser":  "internal\\josh",
+        "EDR":  {
+                    "IsQuarantined":  true,
+                    "QuarantineReason":  "Suspicious behavior detected",
+                    "QuarantineSinceUtc":  "2026-02-11T23:05:00Z"
+                },
+        "Metrics":  {
+                        "DiskFreeGB":  3,
+                        "CPUPercent":  40
+                    },
+        "Backup":  {
+                       "LastRunUtc":  "2026-02-11T22:00:00Z",
+                       "Status":  "Failed"
+                   },
+        "Correlation":  {
+                            "Statuses":  [
+                                             "Quarantined"
+                                         ],
+                            "Status":  "Quarantined",
+                            "Escalation":  "SOC - Critical",
+                            "Notes":  [
+                                          "Device is quarantined AND appears offline (RMM last seen stale). Immediate SOC visibility required.",
+                                          "Backup indicates failure, but remediation/actions are suppressed due to quarantine state (SOC ownership).",
+                                          "Disk is low, but remediation/actions are suppressed due to quarantine state (SOC ownership)."
+                                      ],
+                            "Severity":  2,
+                            "RemediationAllowed":  false
+                        },
+        "Ticket":  {
+                       "System":  "ConnectWise Manage",
+                       "Priority":  "P1",
+                       "Board":  "SOC",
+                       "Summary":  "LAB-WS-01 - Quarantined - SOC - Critical"
+                   }
+    },
+    {
+        "DeviceName":  "LAB-SRV-01",
+        "Client":  "Internal Lab",
+        "Site":  "HQ",
+        "DeviceType":  "Server",
+        "LastSeenUtc":  "2026-02-11T23:15:00Z",
+        "OsVersion":  "Windows Server 2022",
+        "IPAddress":  "10.10.10.20",
+        "LoggedOnUser":  null,
+        "EDR":  {
+                    "IsQuarantined":  false,
+                    "QuarantineReason":  null,
+                    "QuarantineSinceUtc":  null
+                },
+        "Metrics":  {
+                        "DiskFreeGB":  2,
+                        "CPUPercent":  18
+                    },
+        "Backup":  {
+                       "LastRunUtc":  "2026-02-11T22:00:00Z",
+                       "Status":  "Failed"
+                   },
+        "Correlation":  {
+                            "Statuses":  [
+                                             "DiskCritical",
+                                             "BackupFailed",
+                                             "Offline"
+                                         ],
+                            "Status":  "DiskCritical+BackupFailed+Offline",
+                            "Escalation":  "NOC - Critical Backup Impact",
+                            "Notes":  [
+                                          "Low disk space detected (\u003c5 GB).",
+                                          "Backup failed and device appears offline.",
+                                          "Device appears offline without quarantine. Begin standard offline-agent workflow."
+                                      ],
+                            "Severity":  2,
+                            "RemediationAllowed":  true
+                        },
+        "Ticket":  {
+                       "System":  "ConnectWise Manage",
+                       "Priority":  "P1",
+                       "Board":  "NOC",
+                       "Summary":  "LAB-SRV-01 - DiskCritical+BackupFailed+Offline - NOC - Critical Backup Impact"
+                   }
+    },
+    {
+        "DeviceName":  "LAB-WS-02",
+        "Client":  "Internal Lab",
+        "Site":  "Remote",
+        "DeviceType":  "Workstation",
+        "LastSeenUtc":  "2026-02-11T20:45:00Z",
+        "OsVersion":  "Windows 10 22H2",
+        "IPAddress":  "10.10.20.77",
+        "LoggedOnUser":  "internal\\testuser",
+        "EDR":  {
+                    "IsQuarantined":  false,
+                    "QuarantineReason":  null,
+                    "QuarantineSinceUtc":  null
+                },
+        "Metrics":  {
+                        "DiskFreeGB":  25,
+                        "CPUPercent":  9
+                    },
+        "Backup":  {
+                       "LastRunUtc":  "2026-02-11T22:00:00Z",
+                       "Status":  "Success"
+                   },
+        "Correlation":  {
+                            "Statuses":  [
+                                             "Offline"
+                                         ],
+                            "Status":  "Offline",
+                            "Escalation":  "NOC - Investigate Offline",
+                            "Notes":  [
+                                          "Device appears offline without quarantine. Begin standard offline-agent workflow."
+                                      ],
+                            "Severity":  1,
+                            "RemediationAllowed":  true
+                        },
+        "Ticket":  {
+                       "System":  "ConnectWise Manage",
+                       "Priority":  "P2",
+                       "Board":  "NOC",
+                       "Summary":  "LAB-WS-02 - Offline - NOC - Investigate Offline"
+                   }
+    }
+]

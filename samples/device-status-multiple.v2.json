@@ -1,0 +1,71 @@
+[
+  {
+    "DeviceName": "LAB-WS-01",
+    "Client": "Internal Lab",
+    "Site": "HQ",
+    "DeviceType": "Workstation",
+    "LastSeenUtc": "2026-02-11T23:10:00Z",
+    "OsVersion": "Windows 11 23H2",
+    "IPAddress": "10.10.10.51",
+    "LoggedOnUser": "internal\\josh",
+    "EDR": {
+      "IsQuarantined": true,
+      "QuarantineReason": "Suspicious behavior detected",
+      "QuarantineSinceUtc": "2026-02-11T23:05:00Z"
+    },
+    "Metrics": {
+      "DiskFreeGB": 3,
+      "CPUPercent": 40
+    },
+    "Backup": {
+    "LastRunUtc": "2026-02-11T22:00:00Z",
+    "Status": "Failed"
+    }
+  },
+  {
+    "DeviceName": "LAB-SRV-01",
+    "Client": "Internal Lab",
+    "Site": "HQ",
+    "DeviceType": "Server",
+    "LastSeenUtc": "2026-02-11T23:15:00Z",
+    "OsVersion": "Windows Server 2022",
+    "IPAddress": "10.10.10.20",
+    "LoggedOnUser": null,
+    "EDR": {
+      "IsQuarantined": false,
+      "QuarantineReason": null,
+      "QuarantineSinceUtc": null
+    },
+    "Metrics": {
+      "DiskFreeGB": 2,
+      "CPUPercent": 18
+    },
+    "Backup": {
+    "LastRunUtc": "2026-02-11T22:00:00Z",
+    "Status": "Failed"
+    }
+  },
+  {
+    "DeviceName": "LAB-WS-02",
+    "Client": "Internal Lab",
+    "Site": "Remote",
+    "DeviceType": "Workstation",
+    "LastSeenUtc": "2026-02-11T20:45:00Z",
+    "OsVersion": "Windows 10 22H2",
+    "IPAddress": "10.10.20.77",
+    "LoggedOnUser": "internal\\testuser",
+    "EDR": {
+      "IsQuarantined": false,
+      "QuarantineReason": null,
+      "QuarantineSinceUtc": null
+    },
+    "Metrics": {
+      "DiskFreeGB": 25,
+      "CPUPercent": 9
+    },
+    "Backup": {
+    "LastRunUtc": "2026-02-11T22:00:00Z",
+    "Status": "Success"
+    }
+  }
+]
