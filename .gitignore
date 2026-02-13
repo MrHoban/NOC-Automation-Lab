@@ -1,0 +1,7 @@
+# Generated artifacts
+examples/correlation-output.json
+examples/ticket-notes/
+
+# OS
+Thumbs.db
+.DS_Store
